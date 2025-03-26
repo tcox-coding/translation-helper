@@ -1,6 +1,8 @@
 # Translator Helper
 
-A function to help with translations in json files.
+A program to help with translations in json files.
+
+<img src="./readme_images/Screenshot 2025-03-26 132004.png">
 
 For example, with `lang_code`.json files encoded in the following pattern:
 
