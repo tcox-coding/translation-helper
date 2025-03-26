@@ -1,4 +1,4 @@
-# Translator Helper
+# Translation Helper
 
 A program to help with translations in json files.
 
