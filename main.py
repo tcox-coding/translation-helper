@@ -72,6 +72,7 @@ class TranslationHelper():
     # Open the already existing json file as a dictionary
     with open(json_file_location, "r", encoding='utf-8') as json_file:
       data = json.load(json_file)
+      json_file.close()
     
     # Get to the last location of the json file
     last_loc = json_location.split(".")[-1]
@@ -81,10 +82,12 @@ class TranslationHelper():
     for loc in json_location.split("."):
       if loc == last_loc:
         break
-      if not data.get(loc):
+      print(json.dumps(new_data), loc)
+      if not new_data.get(loc):
         new_data[loc] = {}
       new_data = new_data[loc]
     
+    # Do translation
     if lang == 'en':
       new_data[last_loc] = text
     elif lang == 'ukr':
@@ -95,6 +98,7 @@ class TranslationHelper():
     # Write the new data to the json file
     with open(json_file_location, "w", encoding='utf-8') as json_file:
       json.dump(data, json_file, indent=2)
+      json_file.close()
   
   def select_json(self):
     print("Selecting .json file locations...")

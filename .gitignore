@@ -4,3 +4,4 @@ examples/
 build/
 dist/
 main.spec
+example.ipynb
